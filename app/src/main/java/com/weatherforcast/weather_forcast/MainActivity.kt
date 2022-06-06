@@ -1,5 +1,6 @@
 package com.weatherforcast.weather_forcast
 
+import android.annotation.SuppressLint
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import androidx.appcompat.app.AppCompatActivity
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var arrayList: ArrayList<WeatherUIModel>
 
     companion object {
-        val APP_ID = "61bbf6b35a989d36b96f5b23a7731f45"
+        val APP_ID = ""
         val Lati = "33.6038"
         val Longi = "73.0481"
         val Exclude = "hourly"
@@ -93,6 +94,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val isInternetAvailable: Boolean
+        @SuppressLint("MissingPermission")
         get() {
             val connectivityManager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
             val activeNetworkInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
